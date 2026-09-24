@@ -9,7 +9,14 @@ fun main() {
     val massive1 = IntArray(num.toInt())
     for (i in 0..massive1.size - 1) {
         print("Введите элемент массива: ")
-        massive1[i] = readln().toInt()
+        var el = readln()
+        while (el.toIntOrNull() == null)
+        {
+            println("Ошибка ввода!")
+            print("Введите элемент массива: ")
+            el = readln()
+        }
+        massive1[i] = el.toInt()
     }
     print("Введите размер второго массива: ")
     num = readln()
@@ -21,7 +28,14 @@ fun main() {
     val massive2 = IntArray(num.toInt())
     for (i in 0..massive2.size - 1) {
         print("Введите элемент массива: ")
-        massive2[i] = readln().toInt()
+        var el = readln()
+        while (el.toIntOrNull() == null)
+        {
+            println("Ошибка ввода!")
+            print("Введите элемент массива: ")
+            el = readln()
+        }
+        massive2[i] = el.toInt()
     }
     val result = mutableListOf<Int>()
     val list = massive2.toMutableList()
